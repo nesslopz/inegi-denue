@@ -1,5 +1,15 @@
 # inegi-denue
 
+## Tests
+
+``` js
+'env INEGI_API_TOKEN="KEY_TOKEN" npm test'
+
+## Production
+
+``` js
+env INEGI_API_TOKEN="'KEY_TOKEN'" node
+
 ## Usage
 
 ``` js
