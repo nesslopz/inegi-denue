@@ -9,6 +9,11 @@ _NodeJs module to serve JSON data from INEGI DENUE API, a 'KEY TOKEN' is require
 ```
 'KEY_TOKEN' is exactly that String for test Only (using nock)
 
+### Coverage
+``` js
+env INEGI_API_TOKEN="KEY_TOKEN" npm run coverage
+```
+
 ## Production
 
 ``` js
