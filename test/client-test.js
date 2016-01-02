@@ -22,7 +22,7 @@ test('should fail with unknown endpoint', function (t) {
     .get('/foo')
     .reply(404)
 
-  client._request('123,123', 'GET', null, function (err, body) {
+  client._request('123,123', 'GET', function (err, body) {
     t.ok(err, 'should fail')
     t.end()
   })
@@ -73,6 +73,24 @@ test('should search places', function (t) {
     .reply(200, [{Nombre: 'Restaurante'}])
 
   client.search('restaurantes', 123, 123, function (err, places) {
+    t.error(err, 'should not be an error')
+    t.ok(Array.isArray(places), 'should be an array')
+    t.equals(places[0].Nombre, 'Restaurante', 'should retrieve a place Name')
+  })
+
+  t.end()
+})
+
+test('should search places with diferent radio', function (t) {
+  var client = denue.createClient({ endpoint: endpoint })
+
+  t.equals(typeof client.search, 'function', 'should be a function')
+
+  nock(endpoint)
+    .get('/sistemas/api/denue/v1/consulta/buscar/restaurantes/123,123/5000/KEY_TOKEN')
+    .reply(200, [{Nombre: 'Restaurante'}])
+
+  client.search('restaurantes', 123, 123, { close: 5000 }, function (err, places) {
     t.error(err, 'should not be an error')
     t.ok(Array.isArray(places), 'should be an array')
     t.equals(places[0].Nombre, 'Restaurante', 'should retrieve a place Name')

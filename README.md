@@ -22,6 +22,10 @@ client.places(latitude, longitude, function (err, places) {
 client.search('restaurantes', latitude, longitude, function (err, places) {
   // Do something places
 })
+
+client.search('restaurantes', latitude, longitude, {close: 5000} function (err, places) {
+  // Search 'restaurantes' in a 5000 meters radio
+})
 ```
 
 ## Tests
