@@ -4,11 +4,13 @@
 
 ``` js
 'env INEGI_API_TOKEN="KEY_TOKEN" npm test'
+```
 
 ## Production
 
 ``` js
 env INEGI_API_TOKEN="'KEY_TOKEN'" node
+```
 
 ## Usage
 
@@ -17,10 +19,11 @@ var denue = require('inegi-denue')
 
 var client = denue.createClient()
 
-client.places(function (err, places) {
+client.places(latitude, longitude, function (err, places) {
   //  Do something places
 })
 
-client.search('restaurantes', function (err, places) {
+client.search('restaurantes', latitude, longitude, function (err, places) {
   // Do something places
 })
+```
