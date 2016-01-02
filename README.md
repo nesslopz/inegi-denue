@@ -14,3 +14,12 @@ client.places(function (err, places) {
 client.search('restaurantes', function (err, places) {
   // Do something places
 })
+
+## Tests
+
+``` js
+'env INEGI_API_TOKEN="KEY_TOKEN" npm test'
+
+
+## Production
+env INEGI_API_TOKEN="'KEY_TOKEN'" node
