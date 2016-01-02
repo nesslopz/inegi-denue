@@ -1,9 +1,8 @@
 {
   "name": "inegi-denue",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "A INEGI DENUE wrapper client. Available only to México",
   "main": "index.js",
-  "readme": "README.md",
   "scripts": {
     "lint": "standard",
     "coverage": "istanbul cover tape -- test/*-test.js",
