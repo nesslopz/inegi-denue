@@ -1,6 +1,6 @@
 {
   "name": "inegi-denue",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A INEGI DENUE wrapper client. Available only to México",
   "main": "index.js",
   "scripts": {
