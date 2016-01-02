@@ -1,10 +1,16 @@
 {
   "name": "inegi-denue",
   "version": "1.0.0",
-  "description": "Client to serve data from Inegi API DENUE. Available only on México",
+  "description": "A INEGI DENUE wrapper client. Available only to México",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard",
+    "coverage": "istanbul cover tape -- test/*-test.js",
+    "test": "npm run lint && tape test/*-test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nesslopz/inegi-denue.git"
   },
   "keywords": [
     "inegi",
@@ -13,5 +19,19 @@
     "mexico"
   ],
   "author": "Nestor López <n@wingo.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nesslopz/inegi-denue/issues"
+  },
+  "homepage": "https://github.com/nesslopz/inegi-denue#readme",
+  "devDependencies": {
+    "istanbul": "^0.4.1",
+    "nock": "^3.3.2",
+    "standard": "^5.4.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.4.0"
+  },
+  "dependencies": {
+    "client-request": "^1.0.1"
+  }
 }
