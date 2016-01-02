@@ -2,6 +2,28 @@
 _NodeJs module to serve JSON data from INEGI DENUE API, a 'KEY TOKEN' is required_
 > site: http://www.beta.inegi.org.mx/servicios/api_denue.html
 
+## Installation
+
+``` js
+npm install inegi-denue --save
+```
+
+## Usage
+
+``` js
+var denue = require('inegi-denue')
+
+var client = denue.createClient()
+
+client.places(latitude, longitude, function (err, places) {
+  //  Do something places
+})
+
+client.search('restaurantes', latitude, longitude, function (err, places) {
+  // Do something places
+})
+```
+
 ## Tests
 
 ``` js
@@ -21,19 +43,3 @@ env INEGI_API_TOKEN="'KEY_TOKEN'" node
 ```
 'KEY_TOKEN' is a *Required* String
 > get it from: http://www.inegi.org.mx/desarrolladores/denue/apidenue.aspx
-
-## Usage
-
-``` js
-var denue = require('inegi-denue')
-
-var client = denue.createClient()
-
-client.places(latitude, longitude, function (err, places) {
-  //  Do something places
-})
-
-client.search('restaurantes', latitude, longitude, function (err, places) {
-  // Do something places
-})
-```
