@@ -19,6 +19,10 @@ client.places(latitude, longitude, function (err, places) {
   //  Do something places
 })
 
+client.places(latitude, longitude, {close: 1500}, function (err, places) {
+  // Find all places around 1,500 meters
+})
+
 client.search('restaurantes', latitude, longitude, function (err, places) {
   // Do something places
 })

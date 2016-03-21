@@ -32,7 +32,7 @@ test('should fail if not query is passed', function (t) {
   var client = denue.createClient({ endpoint: endpoint })
 
   nock(endpoint)
-    .get('/sistemas/api/denue/v1/consulta/buscar//123,123/1500/KEY_TOKEN')
+    .get('/sistemas/api/denue/v1/consulta/buscar//123,123/500/KEY_TOKEN')
     .reply(400, {
       code: 0,
       message: 'Missing required parameter to search',
@@ -53,7 +53,7 @@ test('should list places', function (t) {
   t.equals(typeof client.places, 'function', 'should be a function')
 
   nock(endpoint)
-    .get('/sistemas/api/denue/v1/consulta/buscar/todos/123,123/1500/KEY_TOKEN')
+    .get('/sistemas/api/denue/v1/consulta/buscar/todos/123,123/500/KEY_TOKEN')
     .reply(200, [])
 
   client.places(123, 123, function (err, places) {
@@ -69,7 +69,7 @@ test('should search places', function (t) {
   t.equals(typeof client.search, 'function', 'should be a function')
 
   nock(endpoint)
-    .get('/sistemas/api/denue/v1/consulta/buscar/restaurantes/123,123/1500/KEY_TOKEN')
+    .get('/sistemas/api/denue/v1/consulta/buscar/restaurantes/123,123/500/KEY_TOKEN')
     .reply(200, [{Nombre: 'Restaurante'}])
 
   client.search('restaurantes', 123, 123, function (err, places) {
